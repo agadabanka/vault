@@ -107,6 +107,15 @@ lease_duration  2592000
 value           itsasecret
 ```
 
+In the absence of a `lease_id`, the `lease_duration` is referred to as a `refresh_interval` and you would see the following output:
+
+```
+$ vault read secret/password
+Key             Value
+refresh_interval  2592000
+value           itsasecret
+```
+
 You can use the `-format` flag to get various different formats out
 from the command. Some formats are easier to use in different environments
 than others.
